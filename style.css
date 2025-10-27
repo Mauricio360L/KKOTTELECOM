@@ -1,18 +1,19 @@
 /* ====================================================== */
-/* VARIABLES DEL USUARIO (Mantenidas) */
+/* VARIABLES DEL USUARIO */
 /* ====================================================== */
 :root {
     /* Colores */
     --color-fondo-oscuro: #2d0609; /* 1: Header, Footer, Backgrounds oscuros */
     --color-acento-fuerte: #a6002e; /* 2: Botones Principales, Precios */
     --color-acento-secundario: #d3304f; /* 3: Enlaces, Hovers de botones */
-    --color-fondo-acentuado: #f3a2cb; /* 4: Fondo de la sección de productos (AHORA SUTIL) */
-    --color-fondo-claro: #f8d5e9; /* 5: Fondo Principal del Body (AHORA ES BLANCO) */
-    --color-fondo-contraste: #ffe5f8; /* 6: Fondo de formularios/áreas muy claras (AHORA GRIS CLARO) */
+    --color-fondo-acentuado: #f3a2cb; /* 4: Fondo de la sección de productos */
+    --color-fondo-claro: #f8d5e9; /* 5: Fondo Principal del Body (Usado como acento sutil) */
+    --color-fondo-contraste: #ffe5f8; /* 6: Fondo de formularios/áreas muy claras (Usado como fondo sutil) */
     
     /* Variables de Texto Auxiliares */
     --color-texto-claro: #ffffff;
     --color-texto-oscuro: #1a1a1a; /* Texto principal casi negro */
+    --color-fondo-blanco: #FFFFFF; /* Nuevo para el fondo limpio */
     
     /* TIPOGRAFÍA */
     --font-principal: "Trocchi", serif; 
@@ -25,113 +26,385 @@
     --spacing-xl: 96px;
 }
 
-/* Base: CAMBIADO a blanco puro */
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base: Fondo BLANCO para la estética limpia */
 body {
     font-family: var(--font-principal);
     line-height: 1.6;
     color: var(--color-texto-oscuro);
-    background-color: #FFFFFF; /* CAMBIO CLAVE: Fondo principal BLANCO */
+    background-color: var(--color-fondo-blanco); /* Fondo principal BLANCO */
 }
 
-/* Header: Mantenido Oscuro para el lujo y el contraste */
-.main-header {
-    background-color: var(--color-fondo-oscuro);
-    padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid var(--color-acento-secundario); 
-}
-.logo, .main-nav a {
-    color: var(--color-texto-claro);
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
 }
 
-/* Tipografía: Títulos en Borgoña Oscuro para presencia en fondo blanco */
+/* ====================================================== */
+/* TIPOGRAFÍA */
+/* ====================================================== */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
-    color: var(--color-fondo-oscuro); 
+    color: var(--color-fondo-oscuro); /* Títulos en el color borgoña oscuro */
     margin-bottom: var(--spacing-sm);
 }
 
-/* Subtítulos y Enlaces: Usan el acento fuerte */
-.subtitle, a {
-    color: var(--color-acento-fuerte); 
+h1 {
+    font-size: 4rem; 
+    line-height: 1.1;
+    letter-spacing: 0.05em; 
+    font-weight: 400; 
 }
 
+h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 400;
+}
 
-/* Botones: Se mantienen para un toque de color fuerte */
+p {
+    margin-bottom: var(--spacing-sm);
+    font-weight: 400;
+    color: var(--color-texto-oscuro);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--color-acento-fuerte); /* Subtítulos en color de acento */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-xs);
+}
+
+.description {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-bottom: var(--spacing-md);
+    font-weight: 300; 
+}
+
+/* Enlaces */
+a {
+    color: var(--color-acento-fuerte);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-acento-secundario);
+}
+
+/* ====================================================== */
+/* BOTONES */
+/* ====================================================== */
+.button {
+    display: inline-block;
+    padding: 12px 30px; 
+    border: 2px solid transparent;
+    border-radius: 0; 
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-family: var(--font-principal);
+}
+
 .button.primary {
     background-color: var(--color-acento-fuerte);
     color: var(--color-texto-claro);
     border-color: var(--color-acento-fuerte);
 }
-.button.outline {
-    background-color: transparent;
-    color: var(--color-acento-fuerte);
-    border-color: var(--color-acento-fuerte);
+
+.button.primary:hover {
+    background-color: var(--color-acento-secundario);
+    border-color: var(--color-acento-secundario);
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 12px rgba(45, 6, 9, 0.3);
 }
-.button.outline:hover {
+
+/* ====================================================== */
+/* HEADER (CORREGIDO Y PROFESIONAL) */
+/* ====================================================== */
+.main-header {
+    background-color: var(--color-fondo-oscuro); /* Header oscuro */
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--color-acento-secundario); 
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 var(--spacing-sm);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--color-texto-claro); 
+}
+.logo:hover {
+    color: var(--color-acento-secundario);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex; /* CLAVE: Fuerza la lista a ser horizontal */
+    gap: var(--spacing-md); 
+}
+
+.main-nav li {
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: var(--color-texto-claro);
+    padding: 5px 0; 
+    display: block; 
+}
+
+.main-nav a:hover {
+    color: var(--color-acento-secundario);
+}
+
+/* Estilos específicos para el botón en el menú */
+.main-nav .button.outline {
+    /* El botón se ve outline (esquema) blanco sobre fondo oscuro */
+    border: 1px solid var(--color-texto-claro); 
+    color: var(--color-texto-claro);
+    padding: 8px 15px; 
+    font-size: 0.9rem;
+}
+
+.main-nav .button.outline:hover {
     background-color: var(--color-acento-fuerte);
+    border-color: var(--color-acento-fuerte);
     color: var(--color-texto-claro);
 }
 
-/* Hero Section: Fondo Blanco y el producto sobre fondo oscuro (Hero Image) */
+/* ====================================================== */
+/* HERO SECTION */
+/* ====================================================== */
 .hero-section {
-    /* Fondo BLANCO para esta sección */
-    background-color: #FFFFFF; 
+    position: relative;
+    display: flex;
+    align-items: center;
     min-height: 90vh; 
+    background-color: var(--color-fondo-blanco); /* Fondo BLANCO */
+    overflow: hidden; 
 }
+
+.hero-content {
+    flex: 1;
+    padding-right: var(--spacing-lg); 
+    z-index: 10;
+    max-width: 50%; 
+}
+
 .hero-image-placeholder {
-    /* El producto destaca sobre un fondo borgoña/oscuro */
-    background-color: var(--color-fondo-oscuro); 
-    /* El resto del estilo se mantiene */
     position: absolute;
     top: 0;
     right: 0;
     width: 50%; 
     height: 100%;
+    background-color: var(--color-fondo-oscuro); /* El producto destaca sobre un fondo oscuro */
+    background-image: url('placeholder-product.jpg'); 
+    background-size: cover;
+    background-position: center;
     opacity: 0.9; 
 }
 
-
-/* Features Section: Fondo SUTIL (el rosa muy claro) */
+/* ====================================================== */
+/* FEATURES SECTION */
+/* ====================================================== */
 .features-section {
     padding: var(--spacing-xl) 0;
-    /* CAMBIO CLAVE: Usa el rosa más claro para un contraste sutil, no dominante */
-    background-color: var(--color-fondo-contraste); 
+    background-color: var(--color-fondo-contraste); /* Fondo muy sutil */
     text-align: center;
 }
-.feature-item {
-    padding: var(--spacing-md);
-    /* Fondo BLANCO para los items dentro de la sección rosa sutil */
-    background-color: #FFFFFF; 
-    border: 1px solid var(--color-acento-secundario);
-    border-radius: 0;
-}
-.icon-placeholder {
-    /* Mantiene el acento fuerte para los iconos */
-    background-color: var(--color-acento-fuerte);
-    border-radius: 0;
-    color: var(--color-texto-claro); 
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
 }
 
-/* Call to Action: Fondo Oscuro para el cierre de la página */
+.feature-item {
+    padding: var(--spacing-md);
+    background-color: var(--color-fondo-blanco); /* Items internos BLANCOS */
+    border: 1px solid var(--color-acento-secundario);
+    border-radius: 0;
+    text-align: center;
+}
+
+.feature-item h3 {
+    font-size: 1.6rem;
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 400;
+    color: var(--color-fondo-oscuro);
+}
+
+.feature-item p {
+    color: var(--color-texto-oscuro);
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.icon-placeholder {
+    width: 70px;
+    height: 70px;
+    background-color: var(--color-acento-fuerte);
+    border-radius: 0; 
+    margin: 0 auto var(--spacing-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-texto-claro); 
+    font-size: 2rem;
+}
+
+/* ====================================================== */
+/* CALL TO ACTION */
+/* ====================================================== */
 .call-to-action {
     background-color: var(--color-fondo-oscuro);
     color: var(--color-texto-claro);
     padding: var(--spacing-xl) 0;
-}
-.call-to-action h2 {
-    color: var(--color-texto-claro);
+    text-align: center;
 }
 
-/* Footer: Mantenido Oscuro para el contraste */
+.call-to-action h2 {
+    color: var(--color-texto-claro);
+    margin-bottom: var(--spacing-md);
+    font-weight: 400;
+}
+
+.call-to-action .button.primary {
+    background-color: var(--color-fondo-claro); /* Fondo claro para contraste */
+    color: var(--color-fondo-oscuro);
+    border-color: var(--color-fondo-claro);
+}
+
+.call-to-action .button.primary:hover {
+    background-color: var(--color-fondo-contraste);
+    border-color: var(--color-fondo-contraste);
+}
+
+/* ====================================================== */
+/* FOOTER */
+/* ====================================================== */
 .main-footer {
     background-color: var(--color-fondo-oscuro);
     padding: var(--spacing-md) 0;
     border-top: 1px solid var(--color-acento-fuerte);
-    color: var(--color-texto-claro);
-}
-.main-footer p, .footer-nav a {
+    font-size: 0.9rem;
     color: var(--color-texto-claro);
 }
 
-/* ... (El resto del CSS se mantiene igual) ... */
-/* Por favor, reemplaza el archivo style.css completo con este código */
+.main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+}
+
+.main-footer p {
+    color: var(--color-texto-claro);
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.footer-nav a {
+    color: var(--color-texto-claro);
+    font-weight: 300;
+}
+
+.footer-nav a:hover {
+    color: var(--color-acento-secundario);
+}
+
+/* ====================================================== */
+/* RESPONSIVE (BÁSICO) */
+/* ====================================================== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        min-height: auto;
+        padding-top: var(--spacing-lg);
+        padding-bottom: var(--spacing-lg);
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .hero-image-placeholder {
+        position: relative;
+        width: 100%;
+        height: 300px; 
+    }
+
+    .main-header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        margin-top: var(--spacing-sm);
+        padding: var(--spacing-sm) 0; /* Espacio para el menú colapsado */
+    }
+    
+    .main-nav a {
+        padding: 5px 0;
+    }
+
+    .main-footer .container {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+}
