@@ -1,0 +1,350 @@
+/* Variables para colores y fuentes */
+:root {
+    --primary-bg-color: #ffffff;
+    --secondary-bg-color: #f5f5f5; /* Un gris muy claro */
+    --text-color: #333333;
+    --light-text-color: #777777;
+    --dark-text-color: #1a1a1a;
+    --accent-color: #000000; /* Negro para acentos fuertes como botones */
+    --border-color: #e0e0e0;
+
+    --font-family-primary: 'Inter', sans-serif;
+
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 32px;
+    --spacing-lg: 64px;
+    --spacing-xl: 96px;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--primary-bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm); /* Espaciado lateral */
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--dark-text-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+    font-size: 3.5rem; /* Grande y prominente */
+    line-height: 1.1;
+    letter-spacing: -0.03em; /* Ajuste sutil para que se vea premium */
+}
+
+h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+    font-weight: 400;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--light-text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: var(--spacing-xs);
+}
+
+.description {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    max-width: 600px;
+    margin-bottom: var(--spacing-md);
+    font-weight: 300; /* Texto descriptivo más ligero */
+}
+
+/* Enlaces */
+a {
+    color: var(--dark-text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--light-text-color);
+}
+
+/* Botones */
+.button {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid transparent;
+    border-radius: 4px; /* Ligeramente redondeado */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.button.primary {
+    background-color: var(--accent-color);
+    color: var(--primary-bg-color);
+    border-color: var(--accent-color);
+}
+
+.button.primary:hover {
+    background-color: var(--dark-text-color);
+    border-color: var(--dark-text-color);
+    transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.button.outline {
+    background-color: transparent;
+    color: var(--dark-text-color);
+    border-color: var(--dark-text-color);
+}
+
+.button.outline:hover {
+    background-color: var(--dark-text-color);
+    color: var(--primary-bg-color);
+}
+
+
+/* Header */
+.main-header {
+    background-color: var(--primary-bg-color);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--dark-text-color);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.main-nav a {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 80vh; /* Ocupa la mayor parte de la pantalla */
+    background-color: var(--secondary-bg-color);
+    overflow: hidden; /* Para que la imagen no se desborde */
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: var(--spacing-lg); /* Espacio para la imagen */
+    z-index: 10;
+    max-width: 50%; /* Contenido ocupa la mitad izquierda */
+}
+
+.hero-image-placeholder {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%; /* La imagen ocupa la mitad derecha */
+    height: 100%;
+    background-color: #1a1a1a; /* Placeholder oscuro para simular un producto */
+    background-image: url('placeholder-product.jpg'); /* Reemplaza con tu imagen de producto */
+    background-size: cover;
+    background-position: center;
+    display: flex; /* Para centrar contenido si lo hubiera */
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9; /* Sutil opacidad para un look premium */
+}
+
+/* Features Section */
+.features-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--primary-bg-color);
+    text-align: center;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.feature-item {
+    padding: var(--spacing-md);
+    background-color: var(--secondary-bg-color);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+}
+
+.feature-item p {
+    color: var(--light-text-color);
+    font-weight: 300;
+    font-size: 0.95rem;
+}
+
+.icon-placeholder {
+    width: 60px;
+    height: 60px;
+    background-color: var(--dark-text-color);
+    border-radius: 50%; /* Círculo para icono */
+    margin: 0 auto var(--spacing-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Color para un posible icono */
+    font-size: 2rem;
+}
+
+/* Call to Action */
+.call-to-action {
+    background-color: var(--dark-text-color);
+    color: var(--primary-bg-color);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.call-to-action h2 {
+    color: var(--primary-bg-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.call-to-action .button.primary {
+    background-color: var(--primary-bg-color);
+    color: var(--dark-text-color);
+    border-color: var(--primary-bg-color);
+}
+
+.call-to-action .button.primary:hover {
+    background-color: var(--secondary-bg-color);
+    border-color: var(--secondary-bg-color);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--primary-bg-color);
+    padding: var(--spacing-md) 0;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+}
+
+.main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para responsive */
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.footer-nav a {
+    color: var(--light-text-color);
+    font-weight: 300;
+}
+
+.footer-nav a:hover {
+    color: var(--dark-text-color);
+}
+
+/* Responsive (básico) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        min-height: auto;
+        padding-top: var(--spacing-lg);
+        padding-bottom: var(--spacing-lg);
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .hero-image-placeholder {
+        position: relative;
+        width: 100%;
+        height: 300px; /* Altura fija en móviles */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        margin-top: var(--spacing-sm);
+    }
+
+    .main-header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-footer .container {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+}
