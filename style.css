@@ -157,15 +157,22 @@ a:hover {
     padding: 0 var(--spacing-sm);
 }
 
+/* --- REGLA DEL LOGO ACTUALIZADA --- */
 .logo {
-    font-size: 1.8rem;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    color: var(--color-texto-claro); 
+    display: block; /* Asegura que el enlace se comporte como bloque */
+    line-height: 0; /* Evita espacios extra */
 }
+
+.logo img {
+    height: 40px; /* Ajusta la altura de tu logo */
+    width: auto;  /* Mantiene la proporción */
+    display: block;
+}
+
 .logo:hover {
-    color: var(--color-acento-secundario);
+    opacity: 0.8; /* Efecto hover simple para la imagen */
 }
+/* --- FIN REGLA DEL LOGO --- */
 
 .main-nav ul {
     list-style: none;
@@ -194,7 +201,6 @@ a:hover {
 
 /* Estilos específicos para el botón en el menú */
 .main-nav .button.outline {
-    /* El botón se ve outline (esquema) blanco sobre fondo oscuro */
     border: 1px solid var(--color-texto-claro); 
     color: var(--color-texto-claro);
     padding: 8px 15px; 
@@ -226,18 +232,23 @@ a:hover {
     max-width: 50%; 
 }
 
-.hero-image-placeholder {
+/* --- REGLAS DE LA IMAGEN HERO ACTUALIZADAS --- */
+.hero-image-container {
     position: absolute;
     top: 0;
     right: 0;
     width: 50%; 
     height: 100%;
-    background-color: var(--color-fondo-oscuro); /* El producto destaca sobre un fondo oscuro */
-    background-image: url('placeholder-product.jpg'); 
-    background-size: cover;
-    background-position: center;
-    opacity: 0.9; 
 }
+
+.hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen cubra el div sin distorsionarse */
+    object-position: center; /* Centra la imagen */
+}
+/* --- FIN REGLAS HERO --- */
+
 
 /* ====================================================== */
 /* FEATURES SECTION */
@@ -277,18 +288,29 @@ a:hover {
     font-size: 1rem;
 }
 
-.icon-placeholder {
+/* --- REGLAS DE LOS ICONOS ACTUALIZADAS --- */
+.icon-container {
     width: 70px;
     height: 70px;
-    background-color: var(--color-acento-fuerte);
-    border-radius: 0; 
     margin: 0 auto var(--spacing-sm);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--color-texto-claro); 
-    font-size: 2rem;
+    
+    /* Fondo de color (opcional, igual que antes) */
+    background-color: var(--color-acento-fuerte); 
+    border-radius: 0; 
 }
+
+.icon-container img {
+    max-width: 60%; /* Icono un poco más pequeño que el fondo */
+    height: auto;
+    display: block;
+    
+    /* Si usas iconos SVG blancos, descomenta la siguiente línea */
+    /* filter: invert(1); */
+}
+/* --- FIN REGLAS ICONOS --- */
 
 /* ====================================================== */
 /* CALL TO ACTION */
@@ -379,8 +401,9 @@ a:hover {
         padding-right: 0;
         margin-bottom: var(--spacing-md);
     }
-
-    .hero-image-placeholder {
+    
+    /* Regla de responsive para la imagen hero */
+    .hero-image-container {
         position: relative;
         width: 100%;
         height: 300px; 
@@ -395,7 +418,7 @@ a:hover {
         flex-direction: column;
         gap: var(--spacing-xs);
         margin-top: var(--spacing-sm);
-        padding: var(--spacing-sm) 0; /* Espacio para el menú colapsado */
+        padding: var(--spacing-sm) 0;
     }
     
     .main-nav a {
