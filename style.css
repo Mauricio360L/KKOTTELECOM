@@ -217,35 +217,42 @@ a:hover {
 /* HERO SECTION */
 /* ====================================================== */
 .hero-section {
-    position: relative;
-    display: flex;
+    /* REMPLAZA tus propiedades existentes de .hero-section por estas */
+    position: relative; /* Mantener por si acaso para otros elementos */
+    display: grid; /* Usar CSS Grid para un control preciso de columnas */
+    grid-template-columns: 1fr 1fr; /* Dos columnas: una para contenido, otra para imagen */
     align-items: center;
     min-height: 90vh; 
-    background-color: var(--color-fondo-blanco); /* Fondo BLANCO */
+    background-color: var(--color-fondo-blanco); 
     overflow: hidden; 
 }
 
 .hero-content {
-    flex: 1;
-    padding-right: var(--spacing-lg); 
+    /* REMPLAZA tus propiedades existentes de .hero-content por estas */
+    grid-column: 1 / 2; /* Asegura que el contenido esté en la primera columna */
+    padding: var(--spacing-lg); /* Añade padding para separación del borde */
+    padding-left: var(--spacing-md); /* Puedes ajustar este padding si es necesario */
+    padding-right: var(--spacing-md); /* Puedes ajustar este padding si es necesario */
     z-index: 10;
-    max-width: 50%; 
+    max-width: 600px; /* Limita el ancho del texto para mejor legibilidad */
+    justify-self: end; /* Alinea el contenido a la derecha de su columna */
 }
 
 /* --- REGLAS DE LA IMAGEN HERO ACTUALIZADAS --- */
 .hero-image-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%; 
+    /* REMPLAZA tus propiedades existentes de .hero-image-container por estas */
+    grid-column: 2 / 3; /* Asegura que el contenedor de la imagen esté en la segunda columna */
+    width: 100%;
     height: 100%;
+    overflow: hidden; /* Asegura que la imagen no se desborde */
 }
 
 .hero-image-container img {
+    /* Estas reglas se mantienen igual, aseguran que la imagen llene su contenedor */
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Hace que la imagen cubra el div sin distorsionarse */
-    object-position: center; /* Centra la imagen */
+    object-fit: cover; 
+    object-position: center; 
 }
 /* --- FIN REGLAS HERO --- */
 
