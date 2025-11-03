@@ -1,879 +1,458 @@
-====================================================== */
-
-/* VARIABLES DEL USUARIO */
-
-/* ====================================================== */
-
+/* ====================================
+   1. VARIABLES GLOBALES Y RESET
+   ==================================== */
 :root {
+  /* Paleta de Colores Kkot Telecom (Definida por el usuario) */
+  --color-fondo-oscuro: #2d0609;
+  --color-acento-fuerte: #a6002e;
+  --color-acento-secundario: #d3304f;
+  --color-fondo-acentuado: #f3a2cb;
+  --color-fondo-claro: #f8d5e9;
+  --color-fondo-contraste: #ffe5f8;
 
-    /* Colores */
+  /* Variables de Texto Auxiliares */
+  --color-texto-claro: #ffffff;
+  --color-texto-oscuro: #1a1a1a;
+  --color-fondo-blanco: #ffffff;
 
-    --color-fondo-oscuro: #2d0609; /* 1: Header, Footer, Backgrounds oscuros */
-
-    --color-acento-fuerte: #a6002e; /* 2: Botones Principales, Precios */
-
-    --color-acento-secundario: #d3304f; /* 3: Enlaces, Hovers de botones */
-
-    --color-fondo-acentuado: #f3a2cb; /* 4: Fondo de la sección de productos */
-
-    --color-fondo-claro: #f8d5e9; /* 5: Fondo Principal del Body (Usado como acento sutil) */
-
-    --color-fondo-contraste: #ffe5f8; /* 6: Fondo de formularios/áreas muy claras (Usado como fondo sutil) */
-
-    
-
-    /* Variables de Texto Auxiliares */
-
-    --color-texto-claro: #ffffff;
-
-    --color-texto-oscuro: #1a1a1a; /* Texto principal casi negro */
-
-    --color-fondo-blanco: #FFFFFF; /* Nuevo para el fondo limpio */
-
-    
-
-    /* TIPOGRAFÍA */
-
-    --font-principal: "Trocchi", serif; 
-
-    
-
-    /* Espaciado (Mantenido) */
-
-    --spacing-xs: 8px;
-
-    --spacing-sm: 16px;
-
-    --spacing-md: 32px;
-
-    --spacing-lg: 64px;
-
-    --spacing-xl: 96px;
-
+  /* TIPOGRAFÍA */
+  --font-principal: "Trocchi", serif;
+  --font-secundaria: "Helvetica Neue", Arial, sans-serif;
+  --padding-base: 20px;
+  --border-radius-base: 4px;
 }
-
-
-
-/* Reset Básico */
 
 * {
-
-    margin: 0;
-
-    padding: 0;
-
-    box-sizing: border-box;
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
-
-html {
-
-    scroll-behavior: smooth;
-
-}
-
-
-
-/* Base: Fondo BLANCO para la estética limpia */
-
+/* Base minimalista */
 body {
-
-    font-family: var(--font-principal);
-
-    line-height: 1.6;
-
-    color: var(--color-texto-oscuro);
-
-    background-color: var(--color-fondo-blanco); /* Fondo principal BLANCO */
-
+  font-family: var(--font-secundaria);
+  line-height: 1.6;
+  color: var(--color-texto-oscuro);
+  background-color: var(--color-fondo-blanco); /* Fondo limpio y blanco */
+  min-height: 100vh;
 }
 
-
-
-.container {
-
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    padding: 0 var(--spacing-sm);
-
+h1,
+h2,
+h3 {
+  font-family: var(--font-principal);
+  font-weight: 400; /* Minimalismo: Trocchi es elegante con peso normal */
 }
 
-
-
-/* ====================================================== */
-
-/* TIPOGRAFÍA */
-
-/* ====================================================== */
-
-h1, h2, h3, h4, h5, h6 {
-
-    font-weight: 700;
-
-    color: var(--color-fondo-oscuro); /* Títulos en el color borgoña oscuro */
-
-    margin-bottom: var(--spacing-sm);
-
+/* Contenedores principales y centrado de contenido */
+.blog-container,
+.product-showcase,
+.cta-purchase,
+.product-detail-container,
+.contact-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 var(--padding-base);
 }
 
-
-
-h1 {
-
-    font-size: 4rem; 
-
-    line-height: 1.1;
-
-    letter-spacing: 0.05em; 
-
-    font-weight: 400; 
-
+/* ====================================
+   2. BOTONES (Minimalistas y con Acento)
+   ==================================== */
+.btn-primary,
+.btn-secondary,
+.btn-cta {
+  display: inline-block;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: var(--border-radius-base);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  border: 2px solid transparent;
+  cursor: pointer;
 }
 
-
-
-h2 {
-
-    font-size: 2.8rem;
-
-    line-height: 1.2;
-
-    text-align: center;
-
-    margin-bottom: var(--spacing-lg);
-
-    font-weight: 400;
-
+/* Botón Principal (Comprar ahora) */
+.btn-primary {
+  background-color: var(--color-acento-fuerte);
+  color: var(--color-texto-claro);
+}
+.btn-primary:hover {
+  background-color: var(--color-acento-secundario);
 }
 
-
-
-p {
-
-    margin-bottom: var(--spacing-sm);
-
-    font-weight: 400;
-
-    color: var(--color-texto-oscuro);
-
+/* Botón Secundario (Añadir al carrito) */
+.btn-secondary {
+  background-color: var(--color-fondo-claro);
+  color: var(--color-texto-oscuro);
+  border-color: var(--color-acento-fuerte);
+}
+.btn-secondary:hover {
+  background-color: var(--color-acento-fuerte);
+  color: var(--color-texto-claro);
 }
 
-
-
-.subtitle {
-
-    font-size: 1.1rem;
-
-    font-weight: 400;
-
-    color: var(--color-acento-fuerte); /* Subtítulos en color de acento */
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.1em;
-
-    margin-bottom: var(--spacing-xs);
-
+/* Botón CTA en el menú */
+.btn-cta {
+  background-color: var(--color-acento-fuerte) !important;
+  color: var(--color-texto-claro) !important;
+  padding: 8px 15px !important;
+  border-radius: 20px !important;
+  font-size: 0.9em;
+}
+.btn-cta:hover {
+  background-color: var(--color-acento-secundario) !important;
 }
 
-
-
-.description {
-
-    font-size: 1.4rem;
-
-    line-height: 1.5;
-
-    max-width: 600px;
-
-    margin-bottom: var(--spacing-md);
-
-    font-weight: 300; 
-
-}
-
-
-
-/* Enlaces */
-
-a {
-
-    color: var(--color-acento-fuerte);
-
-    text-decoration: none;
-
-    transition: color 0.3s ease;
-
-}
-
-
-
-a:hover {
-
-    color: var(--color-acento-secundario);
-
-}
-
-
-
-/* ====================================================== */
-
-/* BOTONES */
-
-/* ====================================================== */
-
-.button {
-
-    display: inline-block;
-
-    padding: 12px 30px; 
-
-    border: 2px solid transparent;
-
-    border-radius: 0; 
-
-    font-weight: 400;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.1em;
-
-    cursor: pointer;
-
-    transition: all 0.3s ease;
-
-    font-size: 1rem;
-
-    font-family: var(--font-principal);
-
-}
-
-
-
-.button.primary {
-
-    background-color: var(--color-acento-fuerte);
-
-    color: var(--color-texto-claro);
-
-    border-color: var(--color-acento-fuerte);
-
-}
-
-
-
-.button.primary:hover {
-
-    background-color: var(--color-acento-secundario);
-
-    border-color: var(--color-acento-secundario);
-
-    transform: translateY(-2px); 
-
-    box-shadow: 0 6px 12px rgba(45, 6, 9, 0.3);
-
-}
-
-
-
-/* ====================================================== */
-
-/* HEADER (CORREGIDO Y PROFESIONAL) */
-
-/* ====================================================== */
-
+/* ====================================
+   3. CABECERA (HEADER) Y NAVEGACIÓN
+   ==================================== */
 .main-header {
-
-    background-color: var(--color-fondo-oscuro); /* Header oscuro */
-
-    padding: var(--spacing-sm) 0;
-
-    border-bottom: 1px solid var(--color-acento-secundario); 
-
+  background-color: var(--color-fondo-oscuro);
+  padding: 10px var(--padding-base);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--color-acento-fuerte); /* Pequeño toque de color */
 }
-
-
-
-.main-header .container {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    max-width: 1200px;
-
-    margin: 0 auto; 
-
-    padding: 0 var(--spacing-sm);
-
-}
-
-
-
-/* --- REGLA DEL LOGO ACTUALIZADA --- */
-
-.logo {
-
-    display: block; /* Asegura que el enlace se comporte como bloque */
-
-    line-height: 0; /* Evita espacios extra */
-
-}
-
-
 
 .logo img {
-
-    height: 40px; /* Ajusta la altura de tu logo */
-
-    width: auto;  /* Mantiene la proporción */
-
-    display: block;
-
+  height: 40px;
 }
-
-
-
-.logo:hover {
-
-    opacity: 0.8; /* Efecto hover simple para la imagen */
-
-}
-
-/* --- FIN REGLA DEL LOGO --- */
-
-
 
 .main-nav ul {
-
-    list-style: none;
-
-    display: flex; /* CLAVE: Fuerza la lista a ser horizontal */
-
-    gap: var(--spacing-md); 
-
+  list-style: none;
+  display: flex;
+  gap: 15px;
 }
 
-
-
-.main-nav li {
-
-    margin: 0;
-
-    padding: 0;
-
+.main-nav li a {
+  text-decoration: none;
+  color: var(--color-texto-claro);
+  padding: 5px 10px;
+  transition: color 0.3s, border-bottom 0.3s;
+  font-weight: 500;
 }
 
-
-
-.main-nav a {
-
-    font-weight: 400;
-
-    text-transform: uppercase;
-
-    font-size: 1rem;
-
-    letter-spacing: 0.05em;
-
-    color: var(--color-texto-claro);
-
-    padding: 5px 0; 
-
-    display: block; 
-
+.main-nav li a:hover,
+.main-nav li.active a {
+  color: var(--color-acento-fuerte);
+  border-bottom: 2px solid var(--color-acento-fuerte);
 }
 
-
-
-.main-nav a:hover {
-
-    color: var(--color-acento-secundario);
-
+/* ====================================
+   4. SECCIÓN HERO (INDEX.HTML)
+   ==================================== */
+.hero {
+  display: flex;
+  flex-wrap: wrap; /* Para hacerlo responsivo */
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 5%;
+  background-color: var(--color-fondo-claro); /* Fondo acentuado sutil */
+  text-align: left;
 }
-
-
-
-/* Estilos específicos para el botón en el menú */
-
-.main-nav .button.outline {
-
-    border: 1px solid var(--color-texto-claro); 
-
-    color: var(--color-texto-claro);
-
-    padding: 8px 15px; 
-
-    font-size: 0.9rem;
-
-}
-
-
-
-.main-nav .button.outline:hover {
-
-    background-color: var(--color-acento-fuerte);
-
-    border-color: var(--color-acento-fuerte);
-
-    color: var(--color-texto-claro);
-
-}
-
-
-
-/* ====================================================== */
-
-/* HERO SECTION */
-
-/* ====================================================== */
-
-.hero-section {
-
-    /* REMPLAZA tus propiedades existentes de .hero-section por estas */
-
-    position: relative; /* Mantener por si acaso para otros elementos */
-
-    display: grid; /* Usar CSS Grid para un control preciso de columnas */
-
-    grid-template-columns: 1fr 1fr; /* Dos columnas: una para contenido, otra para imagen */
-
-    align-items: center;
-
-    min-height: 90vh; 
-
-    background-color: var(--color-fondo-blanco); 
-
-    overflow: hidden; 
-
-}
-
-
 
 .hero-content {
-
-    /* REMPLAZA tus propiedades existentes de .hero-content por estas */
-
-    grid-column: 1 / 2; /* Asegura que el contenido esté en la primera columna */
-
-    padding: var(--spacing-lg); /* Añade padding para separación del borde */
-
-    padding-left: var(--spacing-md); /* Puedes ajustar este padding si es necesario */
-
-    padding-right: var(--spacing-md); /* Puedes ajustar este padding si es necesario */
-
-    z-index: 10;
-
-    max-width: 600px; /* Limita el ancho del texto para mejor legibilidad */
-
-    justify-self: end; /* Alinea el contenido a la derecha de su columna */
-
+  max-width: 45%;
+  padding-right: 30px;
 }
 
-
-
-/* --- REGLAS DE LA IMAGEN HERO ACTUALIZADAS --- */
-
-.hero-image-container {
-
-    /* REMPLAZA tus propiedades existentes de .hero-image-container por estas */
-
-    grid-column: 2 / 3; /* Asegura que el contenedor de la imagen esté en la segunda columna */
-
-    width: 100%;
-
-    height: 100%;
-
-    overflow: hidden; /* Asegura que la imagen no se desborde */
-
+.hero-content h1 {
+  font-size: 3.5em;
+  color: var(--color-acento-fuerte);
+  margin-bottom: 15px;
 }
 
-
-
-.hero-image-container img {
-
-    /* Estas reglas se mantienen igual, aseguran que la imagen llene su contenedor */
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover; 
-
-    object-position: center; 
-
+.hero-content h2 {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  color: var(--color-fondo-oscuro);
 }
 
-/* --- FIN REGLAS HERO --- */
-
-
-
-
-
-/* ====================================================== */
-
-/* FEATURES SECTION */
-
-/* ====================================================== */
-
-.features-section {
-
-    padding: var(--spacing-xl) 0;
-
-    background-color: var(--color-fondo-contraste); /* Fondo muy sutil */
-
-    text-align: center;
-
+.hero-image {
+  max-width: 45%;
 }
 
-
-
-.feature-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
-    gap: var(--spacing-lg);
-
-    margin-top: var(--spacing-md);
-
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-base);
+  box-shadow: 5px 5px 0px var(--color-acento-fuerte),
+    -5px -5px 0px var(--color-acento-secundario); /* Borde sutil */
 }
 
+/* ====================================
+   5. CARACTERÍSTICAS (INDEX.HTML)
+   ==================================== */
+.product-showcase h2 {
+  text-align: center;
+  color: var(--color-acento-fuerte);
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
 
+.product-showcase > p {
+  /* La p justo debajo del h2 */
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
 
 .feature-item {
-
-    padding: var(--spacing-md);
-
-    background-color: var(--color-fondo-blanco); /* Items internos BLANCOS */
-
-    border: 1px solid var(--color-acento-secundario);
-
-    border-radius: 0;
-
-    text-align: center;
-
+  text-align: center;
+  padding: 30px 20px;
+  background-color: var(--color-fondo-contraste); /* Fondo claro de contraste */
+  border-radius: var(--border-radius-base);
+  border-top: 5px solid var(--color-acento-secundario);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
-
-
 
 .feature-item h3 {
-
-    font-size: 1.6rem;
-
-    margin-top: var(--spacing-sm);
-
-    margin-bottom: var(--spacing-xs);
-
-    font-weight: 400;
-
-    color: var(--color-fondo-oscuro);
-
+  color: var(--color-fondo-oscuro);
+  margin-bottom: 10px;
+  font-size: 1.5em;
 }
 
-
-
-.feature-item p {
-
-    color: var(--color-texto-oscuro);
-
-    font-weight: 300;
-
-    font-size: 1rem;
-
+/* ====================================
+   6. SECCIÓN DE COMPRA (INDEX.HTML)
+   ==================================== */
+.cta-purchase {
+  text-align: center;
+  background-color: var(--color-acento-fuerte);
+  color: var(--color-texto-claro);
+  padding: 60px 20px;
+  border-radius: var(--border-radius-base);
+  margin-top: 50px;
 }
 
-
-
-/* --- REGLAS DE LOS ICONOS ACTUALIZADAS --- */
-
-.icon-container {
-
-    width: 70px;
-
-    height: 70px;
-
-    margin: 0 auto var(--spacing-sm);
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    
-
-    /* Fondo de color (opcional, igual que antes) */
-
-    background-color: var(--color-acento-fuerte); 
-
-    border-radius: 0; 
-
+.cta-purchase h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: var(--color-texto-claro);
 }
 
-
-
-.icon-container img {
-
-    max-width: 60%; /* Icono un poco más pequeño que el fondo */
-
-    height: auto;
-
-    display: block;
-
-    
-
-    /* Si usas iconos SVG blancos, descomenta la siguiente línea */
-
-    /* filter: invert(1); */
-
+.price-info {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  font-family: var(--font-principal);
 }
 
-/* --- FIN REGLAS ICONOS --- */
-
-
-
-/* ====================================================== */
-
-/* CALL TO ACTION */
-
-/* ====================================================== */
-
-.call-to-action {
-
-    background-color: var(--color-fondo-oscuro);
-
-    color: var(--color-texto-claro);
-
-    padding: var(--spacing-xl) 0;
-
-    text-align: center;
-
+/* ====================================
+   7. DETALLES DEL PRODUCTO (producto.html)
+   ==================================== */
+.product-detail-container {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+.product-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.product-header h1 {
+  font-size: 3em;
+  color: var(--color-acento-fuerte);
+}
+.product-price {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-top: 20px;
+}
+.price-tag {
+  font-family: var(--font-principal);
+  color: var(--color-acento-secundario);
+  font-size: 1.2em;
+  margin-right: 20px;
 }
 
-
-
-.call-to-action h2 {
-
-    color: var(--color-texto-claro);
-
-    margin-bottom: var(--spacing-md);
-
-    font-weight: 400;
-
+/* Galería */
+.product-gallery {
+  margin-bottom: 50px;
+  border-bottom: 1px solid var(--color-fondo-claro);
+  padding-bottom: 30px;
+}
+.product-gallery h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--color-fondo-oscuro);
+}
+.main-image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.main-image img {
+  max-width: 70%;
+  height: auto;
+  border: 1px solid var(--color-fondo-claro);
+  border-radius: var(--border-radius-base);
+}
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.thumbnails img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-base);
+  opacity: 0.7;
+}
+.thumbnails img:hover,
+.thumbnails img.active {
+  border-color: var(--color-acento-fuerte);
+  opacity: 1;
 }
 
-
-
-.call-to-action .button.primary {
-
-    background-color: var(--color-fondo-claro); /* Fondo claro para contraste */
-
-    color: var(--color-fondo-oscuro);
-
-    border-color: var(--color-fondo-claro);
-
+/* Especificaciones */
+.technical-specs h2,
+.more-details h2 {
+  color: var(--color-fondo-oscuro);
+  border-bottom: 2px solid var(--color-acento-fuerte);
+  padding-bottom: 5px;
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.spec-item {
+  background-color: var(--color-fondo-contraste);
+  padding: 20px;
+  border-left: 5px solid var(--color-acento-secundario);
+  border-radius: var(--border-radius-base);
+}
+.spec-item h3 {
+  color: var(--color-fondo-oscuro);
+  margin-bottom: 15px;
+  font-family: var(--font-secundaria);
+  font-weight: bold;
+}
+.spec-item ul {
+  list-style: none;
+  padding-left: 0;
+}
+.spec-item li {
+  margin-bottom: 8px;
+  font-size: 0.95em;
 }
 
-
-
-.call-to-action .button.primary:hover {
-
-    background-color: var(--color-fondo-contraste);
-
-    border-color: var(--color-fondo-contraste);
-
+/* ====================================
+   8. BLOG Y COMENTARIOS (blog.html)
+   ==================================== */
+.blog-container h1 {
+  text-align: center;
+  color: var(--color-acento-fuerte);
+}
+.subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #666;
 }
 
+.admin-posts,
+.user-comments,
+.comments-display {
+  padding: 30px 0;
+  border-bottom: 1px solid var(--color-fondo-claro);
+}
 
+.admin-posts h2,
+.user-comments h2,
+.comments-display h2 {
+  color: var(--color-fondo-oscuro);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--color-acento-fuerte);
+  padding-bottom: 5px;
+}
 
-/* ====================================================== */
+.post {
+  background-color: var(--color-fondo-blanco);
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: var(--border-radius-base);
+  border: 1px solid var(--color-fondo-claro);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
 
-/* FOOTER */
+.post h3 {
+  color: var(--color-acento-fuerte);
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
 
-/* ====================================================== */
+.post-meta {
+  font-size: 0.9em;
+  color: var(--color-acento-secundario);
+  margin-bottom: 15px;
+}
 
+/* Estilos del formulario de comentarios */
+.comment-form {
+  background-color: var(--color-fondo-contraste);
+  padding: 30px;
+  border-radius: var(--border-radius-base);
+}
+.comment-form input[type="text"],
+.comment-form textarea,
+.comment-form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-acento-fuerte);
+  border-radius: var(--border-radius-base);
+  font-family: inherit;
+  margin-top: 5px;
+}
+
+.client-comment {
+  border-left: 5px solid var(--color-acento-secundario);
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: var(--color-fondo-claro);
+  border-radius: var(--border-radius-base);
+}
+
+.admin-reply {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: var(--color-fondo-blanco);
+  border-left: 3px solid var(--color-acento-fuerte);
+  border-radius: var(--border-radius-base);
+}
+.admin-reply p {
+  font-size: 0.9em;
+}
+
+/* ====================================
+   9. PIE DE PÁGINA (FOOTER)
+   ==================================== */
 .main-footer {
-
-    background-color: var(--color-fondo-oscuro);
-
-    padding: var(--spacing-md) 0;
-
-    border-top: 1px solid var(--color-acento-fuerte);
-
-    font-size: 0.9rem;
-
-    color: var(--color-texto-claro);
-
+  background-color: var(--color-fondo-oscuro);
+  color: var(--color-texto-claro);
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
 }
 
-
-
-.main-footer .container {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    flex-wrap: wrap; 
-
+.footer-links a {
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
 }
 
-
-
-.main-footer p {
-
-    color: var(--color-texto-claro);
-
-}
-
-
-
-.footer-nav ul {
-
-    list-style: none;
-
-    display: flex;
-
-    gap: var(--spacing-sm);
-
-}
-
-
-
-.footer-nav a {
-
-    color: var(--color-texto-claro);
-
-    font-weight: 300;
-
-}
-
-
-
-.footer-nav a:hover {
-
-    color: var(--color-acento-secundario);
-
-}
-
-
-
-/* ====================================================== */
-
-/* RESPONSIVE (BÁSICO) */
-
-/* ====================================================== */
-
-@media (max-width: 768px) {
-
-    h1 {
-
-        font-size: 2.8rem;
-
-    }
-
-
-
-    h2 {
-
-        font-size: 2.2rem;
-
-    }
-
-
-
-    .hero-section {
-
-        flex-direction: column;
-
-        min-height: auto;
-
-        padding-top: var(--spacing-lg);
-
-        padding-bottom: var(--spacing-lg);
-
-    }
-
-
-
-    .hero-content {
-
-        max-width: 100%;
-
-        text-align: center;
-
-        padding-right: 0;
-
-        margin-bottom: var(--spacing-md);
-
-    }
-
-    
-
-    /* Regla de responsive para la imagen hero */
-
-    .hero-image-container {
-
-        position: relative;
-
-        width: 100%;
-
-        height: 300px; 
-
-    }
-
-
-
-    .main-header .container {
-
-        flex-direction: column;
-
-        text-align: center;
-
-    }
-
-    
-
-    .main-nav ul {
-
-        flex-direction: column;
-
-        gap: var(--spacing-xs);
-
-        margin-top: var(--spacing-sm);
-
-        padding: var(--spacing-sm) 0;
-
-    }
-
-    
-
-    .main-nav a {
-
-        padding: 5px 0;
-
-    }
-
-
-
-    .main-footer .container {
-
-        flex-direction: column;
-
-        text-align: center;
-
-        gap: var(--spacing-sm);
-
-    }
-
+.footer-links a:hover {
+  color: var(--color-acento-fuerte);
 }
