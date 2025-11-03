@@ -140,28 +140,49 @@ a:hover {
 }
 
 /* ====================================================== */
-/* HEADER (Revertido a la versión que te gustaba) */
+/* HEADER (CORREGIDO Y PROFESIONAL) */
 /* ====================================================== */
 .main-header {
-    background-color: var(--color-fondo-oscuro);
-    padding: var(--spacing-sm) 0; /* Padding superior e inferior */
-    border-bottom: 1px solid var(--color-acento-secundario);
+    background-color: var(--color-fondo-oscuro); /* Header oscuro */
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--color-acento-secundario);  
 }
 
 .main-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;  
+    padding: 0 var(--spacing-sm);
+}
+
+/* --- REGLA DEL LOGO ACTUALIZADA --- */
+.logo {
+    display: block; /* Asegura que el enlace se comporte como bloque */
+    line-height: 0; /* Evita espacios extra */
 }
 
 .logo img {
-    height: 40px; /* Tamaño más compacto para el logo */
+    height: 40px; /* Ajusta la altura de tu logo */
+    width: auto;  /* Mantiene la proporción */
+    display: block;
 }
+
+.logo:hover {
+    opacity: 0.8; /* Efecto hover simple para la imagen */
+}
+/* --- FIN REGLA DEL LOGO --- */
 
 .main-nav ul {
     list-style: none;
-    display: flex;
-    gap: var(--spacing-md);
+    display: flex; /* CLAVE: Fuerza la lista a ser horizontal */
+    gap: var(--spacing-md);  
+}
+
+.main-nav li {
+    margin: 0;
+    padding: 0;
 }
 
 .main-nav a {
@@ -170,18 +191,19 @@ a:hover {
     font-size: 1rem;
     letter-spacing: 0.05em;
     color: var(--color-texto-claro);
-    padding: 5px 0;
-    display: block;
+    padding: 5px 0;  
+    display: block;  
 }
 
 .main-nav a:hover {
     color: var(--color-acento-secundario);
 }
 
+/* Estilos específicos para el botón en el menú */
 .main-nav .button.outline {
-    border: 1px solid var(--color-texto-claro);
+    border: 1px solid var(--color-texto-claro);  
     color: var(--color-texto-claro);
-    padding: 8px 15px;
+    padding: 8px 15px;  
     font-size: 0.9rem;
 }
 
@@ -195,9 +217,10 @@ a:hover {
 /* HERO SECTION */
 /* ====================================================== */
 .hero-section {
-    position: relative; 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
+    /* REMPLAZA tus propiedades existentes de .hero-section por estas */
+    position: relative; /* Mantener por si acaso para otros elementos */
+    display: grid; /* Usar CSS Grid para un control preciso de columnas */
+    grid-template-columns: 1fr 1fr; /* Dos columnas: una para contenido, otra para imagen */
     align-items: center;
     min-height: 90vh;  
     background-color: var(--color-fondo-blanco);  
@@ -205,76 +228,96 @@ a:hover {
 }
 
 .hero-content {
-    grid-column: 1 / 2; 
-    padding: var(--spacing-lg); 
-    padding-left: var(--spacing-md); 
-    padding-right: var(--spacing-md); 
+    /* REMPLAZA tus propiedades existentes de .hero-content por estas */
+    grid-column: 1 / 2; /* Asegura que el contenido esté en la primera columna */
+    padding: var(--spacing-lg); /* Añade padding para separación del borde */
+    padding-left: var(--spacing-md); /* Puedes ajustar este padding si es necesario */
+    padding-right: var(--spacing-md); /* Puedes ajustar este padding si es necesario */
     z-index: 10;
-    max-width: 600px; 
-    justify-self: end; 
+    max-width: 600px; /* Limita el ancho del texto para mejor legibilidad */
+    justify-self: end; /* Alinea el contenido a la derecha de su columna */
 }
 
+/* --- REGLAS DE LA IMAGEN HERO ACTUALIZADAS --- */
 .hero-image-container {
-    grid-column: 2 / 3; 
+    /* REMPLAZA tus propiedades existentes de .hero-image-container por estas */
+    grid-column: 2 / 3; /* Asegura que el contenedor de la imagen esté en la segunda columna */
     width: 100%;
     height: 100%;
-    overflow: hidden; 
+    overflow: hidden; /* Asegura que la imagen no se desborde */
 }
 
 .hero-image-container img {
+    /* Estas reglas se mantienen igual, aseguran que la imagen llene su contenedor */
     width: 100%;
     height: 100%;
     object-fit: cover;  
     object-position: center;  
 }
+/* --- FIN REGLAS HERO --- */
+
 
 /* ====================================================== */
-/* GALLERY SECTION (NUEVA - Ajustada para ser minimalista y bonita) */
+/* FEATURES SECTION (Original) */
 /* ====================================================== */
-.gallery-section {
+.features-section {
     padding: var(--spacing-xl) 0;
-    background-color: var(--color-fondo-contraste); 
+    background-color: var(--color-fondo-contraste); /* Fondo muy sutil */
+    text-align: center;
 }
 
-.gallery-grid {
+.feature-grid {
     display: grid;
-    /* Definimos una cuadrícula más controlada */
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
-    gap: var(--spacing-sm); /* Espacio entre las imágenes */
-    max-width: 1000px; /* Limita el ancho máximo de la galería */
-    margin: 0 auto; /* Centra la galería */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
 }
 
-.gallery-item {
-    /* Cada item de la galería tendrá una altura fija y su imagen se ajustará */
-    height: 350px; /* Altura controlada para cada imagen de la galería */
-    overflow: hidden; 
-    background-color: var(--color-fondo-blanco); /* Fondo blanco para las cajas */
-    border: 1px solid rgba(0,0,0,0.05); /* Borde sutil */
-    display: flex; /* Para centrar la imagen si es más pequeña */
-    justify-content: center;
+.feature-item {
+    padding: var(--spacing-md);
+    background-color: var(--color-fondo-blanco); /* Items internos BLANCOS */
+    border: 1px solid var(--color-acento-secundario);
+    border-radius: 0;
+    text-align: center;
+}
+
+.feature-item h3 {
+    font-size: 1.6rem;
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 400;
+    color: var(--color-fondo-oscuro);
+}
+
+.feature-item p {
+    color: var(--color-texto-oscuro);
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+/* --- REGLAS DE LOS ICONOS ACTUALIZADAS --- */
+.icon-container {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto var(--spacing-sm);
+    display: flex;
+   Tjustify-content: center;
     align-items: center;
+    
+    /* Fondo de color (opcional, igual que antes) */
+    background-color: var(--color-acento-fuerte);  
+    border-radius: 0;  
 }
 
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la imagen llene el espacio sin deformarse */
-    transition: transform 0.4s ease;
+.icon-container img {
+    max-width: 60%; /* Icono un poco más pequeño que el fondo */
+    height: auto;
+    display: block;
+    
+    /* Si usas iconos SVG blancos, descomenta la siguiente línea */
+    /* filter: invert(1); */
 }
-
-.gallery-item img:hover {
-    transform: scale(1.03); /* Un sutil efecto de zoom al pasar el ratón */
-}
-
-/* Opcional: Si quieres que la primera imagen sea más grande, puedes usar esto */
-/* Puedes comentar o descomentar estas reglas si te gusta la imagen principal más grande */
-/*
-.gallery-item.item-1 {
-    grid-column: 1 / 3; // Ocupa 2 columnas
-}
-*/
-
+/* --- FIN REGLAS ICONOS --- */
 
 /* ====================================================== */
 /* CALL TO ACTION */
@@ -378,37 +421,16 @@ a:hover {
         height: 300px;  
     }
 
-    /* GALLERY SECTION RESPONSIVO */
-    .gallery-section {
-        padding: var(--spacing-lg) 0;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
-        gap: var(--spacing-md); /* Más espacio entre fotos en vertical */
-    }
-
-    .gallery-item {
-        height: 250px; /* Altura más adecuada para móvil */
-    }
-    /* Si el item 1 era más grande, asegurarse de que en móvil ocupe solo una columna */
-    /*
-    .gallery-item.item-1 {
-        grid-column: 1 / -1; 
-    }
-    */
-
-
-    /* HEADER RESPONSIVO (revertido a cómo lo tenías) */
+    /* HEADER RESPONSIVO */
     .main-header .container {
-        flex-direction: column; /* Apila el logo y el nav en vertical */
+        flex-direction: column;
         text-align: center;
     }
     
     .main-nav ul {
         flex-direction: column;
         gap: var(--spacing-xs);
-        margin-top: var(--spacing-sm);
+   D     margin-top: var(--spacing-sm);
         padding: var(--spacing-sm) 0;
     }
     
