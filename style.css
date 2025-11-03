@@ -1,439 +1,879 @@
-/* ====================================================== */
+====================================================== */
+
 /* VARIABLES DEL USUARIO */
+
 /* ====================================================== */
+
 :root {
-    /* Colores */
-    --color-fondo-oscuro: #2d0609; /* 1: Header, Footer, Backgrounds oscuros */
-    --color-acento-fuerte: #a6002e; /* 2: Botones Principales, Precios */
-    --color-acento-secundario: #d3304f; /* 3: Enlaces, Hovers de botones */
-    --color-fondo-acentuado: #f3a2cb; /* 4: Fondo de la sección de productos */
-    --color-fondo-claro: #f8d5e9; /* 5: Fondo Principal del Body (Usado como acento sutil) */
-    --color-fondo-contraste: #ffe5f8; /* 6: Fondo de formularios/áreas muy claras (Usado como fondo sutil) */
-    
-    /* Variables de Texto Auxiliares */
-    --color-texto-claro: #ffffff;
-    --color-texto-oscuro: #1a1a1a; /* Texto principal casi negro */
-    --color-fondo-blanco: #FFFFFF; /* Nuevo para el fondo limpio */
-    
-    /* TIPOGRAFÍA */
-    --font-principal: "Trocchi", serif; 
-    
-    /* Espaciado (Mantenido) */
-    --spacing-xs: 8px;
-    --spacing-sm: 16px;
-    --spacing-md: 32px;
-    --spacing-lg: 64px;
-    --spacing-xl: 96px;
+
+    /* Colores */
+
+    --color-fondo-oscuro: #2d0609; /* 1: Header, Footer, Backgrounds oscuros */
+
+    --color-acento-fuerte: #a6002e; /* 2: Botones Principales, Precios */
+
+    --color-acento-secundario: #d3304f; /* 3: Enlaces, Hovers de botones */
+
+    --color-fondo-acentuado: #f3a2cb; /* 4: Fondo de la sección de productos */
+
+    --color-fondo-claro: #f8d5e9; /* 5: Fondo Principal del Body (Usado como acento sutil) */
+
+    --color-fondo-contraste: #ffe5f8; /* 6: Fondo de formularios/áreas muy claras (Usado como fondo sutil) */
+
+    
+
+    /* Variables de Texto Auxiliares */
+
+    --color-texto-claro: #ffffff;
+
+    --color-texto-oscuro: #1a1a1a; /* Texto principal casi negro */
+
+    --color-fondo-blanco: #FFFFFF; /* Nuevo para el fondo limpio */
+
+    
+
+    /* TIPOGRAFÍA */
+
+    --font-principal: "Trocchi", serif; 
+
+    
+
+    /* Espaciado (Mantenido) */
+
+    --spacing-xs: 8px;
+
+    --spacing-sm: 16px;
+
+    --spacing-md: 32px;
+
+    --spacing-lg: 64px;
+
+    --spacing-xl: 96px;
+
 }
+
+
 
 /* Reset Básico */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
 }
+
+
 
 html {
-    scroll-behavior: smooth;
+
+    scroll-behavior: smooth;
+
 }
+
+
 
 /* Base: Fondo BLANCO para la estética limpia */
+
 body {
-    font-family: var(--font-principal);
-    line-height: 1.6;
-    color: var(--color-texto-oscuro);
-    background-color: var(--color-fondo-blanco); /* Fondo principal BLANCO */
+
+    font-family: var(--font-principal);
+
+    line-height: 1.6;
+
+    color: var(--color-texto-oscuro);
+
+    background-color: var(--color-fondo-blanco); /* Fondo principal BLANCO */
+
 }
+
+
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-sm);
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 var(--spacing-sm);
+
 }
 
+
+
 /* ====================================================== */
+
 /* TIPOGRAFÍA */
+
 /* ====================================================== */
+
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    color: var(--color-fondo-oscuro); /* Títulos en el color borgoña oscuro */
-    margin-bottom: var(--spacing-sm);
+
+    font-weight: 700;
+
+    color: var(--color-fondo-oscuro); /* Títulos en el color borgoña oscuro */
+
+    margin-bottom: var(--spacing-sm);
+
 }
+
+
 
 h1 {
-    font-size: 4rem; 
-    line-height: 1.1;
-    letter-spacing: 0.05em; 
-    font-weight: 400; 
+
+    font-size: 4rem; 
+
+    line-height: 1.1;
+
+    letter-spacing: 0.05em; 
+
+    font-weight: 400; 
+
 }
+
+
 
 h2 {
-    font-size: 2.8rem;
-    line-height: 1.2;
-    text-align: center;
-    margin-bottom: var(--spacing-lg);
-    font-weight: 400;
+
+    font-size: 2.8rem;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    margin-bottom: var(--spacing-lg);
+
+    font-weight: 400;
+
 }
+
+
 
 p {
-    margin-bottom: var(--spacing-sm);
-    font-weight: 400;
-    color: var(--color-texto-oscuro);
+
+    margin-bottom: var(--spacing-sm);
+
+    font-weight: 400;
+
+    color: var(--color-texto-oscuro);
+
 }
+
+
 
 .subtitle {
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--color-acento-fuerte); /* Subtítulos en color de acento */
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: var(--spacing-xs);
+
+    font-size: 1.1rem;
+
+    font-weight: 400;
+
+    color: var(--color-acento-fuerte); /* Subtítulos en color de acento */
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+
+    margin-bottom: var(--spacing-xs);
+
 }
+
+
 
 .description {
-    font-size: 1.4rem;
-    line-height: 1.5;
-    max-width: 600px
-    margin-bottom: var(--spacing-md);
-    font-weight: 300; 
+
+    font-size: 1.4rem;
+
+    line-height: 1.5;
+
+    max-width: 600px;
+
+    margin-bottom: var(--spacing-md);
+
+    font-weight: 300; 
+
 }
+
+
 
 /* Enlaces */
+
 a {
-    color: var(--color-acento-fuerte);
-    text-decoration: none;
-    transition: color 0.3s ease;
+
+    color: var(--color-acento-fuerte);
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+
 }
+
+
 
 a:hover {
-    color: var(--color-acento-secundario);
+
+    color: var(--color-acento-secundario);
+
 }
 
+
+
 /* ====================================================== */
+
 /* BOTONES */
+
 /* ====================================================== */
+
 .button {
-    display: inline-block;
-    padding: 12px 30px; 
-    border: 2px solid transparent;
-    border-radius: 0; 
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-    font-family: var(--font-principal);
+
+    display: inline-block;
+
+    padding: 12px 30px; 
+
+    border: 2px solid transparent;
+
+    border-radius: 0; 
+
+    font-weight: 400;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    font-size: 1rem;
+
+    font-family: var(--font-principal);
+
 }
+
+
 
 .button.primary {
-    background-color: var(--color-acento-fuerte);
-    color: var(--color-texto-claro);
-    border-color: var(--color-acento-fuerte);
+
+    background-color: var(--color-acento-fuerte);
+
+    color: var(--color-texto-claro);
+
+    border-color: var(--color-acento-fuerte);
+
 }
+
+
 
 .button.primary:hover {
-    background-color: var(--color-acento-secundario);
-    border-color: var(--color-acento-secundario);
-    transform: translateY(-2px); 
-    box-shadow: 0 6px 12px rgba(45, 6, 9, 0.3);
+
+    background-color: var(--color-acento-secundario);
+
+    border-color: var(--color-acento-secundario);
+
+    transform: translateY(-2px); 
+
+    box-shadow: 0 6px 12px rgba(45, 6, 9, 0.3);
+
 }
 
+
+
 /* ====================================================== */
+
 /* HEADER (CORREGIDO Y PROFESIONAL) */
+
 /* ====================================================== */
+
 .main-header {
-    background-color: var(--color-fondo-oscuro); /* Header oscuro */
-    padding: var(--spacing-sm) 0;
-    border-bottom: 1px solid var(--color-acento-secundario); 
+
+    background-color: var(--color-fondo-oscuro); /* Header oscuro */
+
+    padding: var(--spacing-sm) 0;
+
+    border-bottom: 1px solid var(--color-acento-secundario); 
+
 }
+
+
 
 .main-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto; 
-    padding: 0 var(--spacing-sm);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    max-width: 1200px;
+
+    margin: 0 auto; 
+
+    padding: 0 var(--spacing-sm);
+
 }
+
+
 
 /* --- REGLA DEL LOGO ACTUALIZADA --- */
+
 .logo {
-    display: block; /* Asegura que el enlace se comporte como bloque */
-    line-height: 0; /* Evita espacios extra */
+
+    display: block; /* Asegura que el enlace se comporte como bloque */
+
+    line-height: 0; /* Evita espacios extra */
+
 }
+
+
 
 .logo img {
-    height: 40px; /* Ajusta la altura de tu logo */
-    width: auto; /* Mantiene la proporción */
-    display: block;
+
+    height: 40px; /* Ajusta la altura de tu logo */
+
+    width: auto;  /* Mantiene la proporción */
+
+    display: block;
+
 }
+
+
 
 .logo:hover {
-    opacity: 0.8; /* Efecto hover simple para la imagen */
+
+    opacity: 0.8; /* Efecto hover simple para la imagen */
+
 }
+
 /* --- FIN REGLA DEL LOGO --- */
 
+
+
 .main-nav ul {
-    list-style: none;
-    display: flex; /* CLAVE: Fuerza la lista a ser horizontal */
-    gap: var(--spacing-md); 
+
+    list-style: none;
+
+    display: flex; /* CLAVE: Fuerza la lista a ser horizontal */
+
+    gap: var(--spacing-md); 
+
 }
+
+
 
 .main-nav li {
-    margin: 0;
-    padding: 0;
+
+    margin: 0;
+
+    padding: 0;
+
 }
+
+
 
 .main-nav a {
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size: 1rem;
-    letter-spacing: 0.05em;
-    color: var(--color-texto-claro);
-    padding: 5px 0; 
-    display: block; 
+
+    font-weight: 400;
+
+    text-transform: uppercase;
+
+    font-size: 1rem;
+
+    letter-spacing: 0.05em;
+
+    color: var(--color-texto-claro);
+
+    padding: 5px 0; 
+
+    display: block; 
+
 }
+
+
 
 .main-nav a:hover {
-    color: var(--color-acento-secundario);
+
+    color: var(--color-acento-secundario);
+
 }
+
+
 
 /* Estilos específicos para el botón en el menú */
+
 .main-nav .button.outline {
-    border: 1px solid var(--color-texto-claro); 
-    color: var(--color-texto-claro);
-    padding: 8px 15px; 
-    font-size: 0.9rem;
+
+    border: 1px solid var(--color-texto-claro); 
+
+    color: var(--color-texto-claro);
+
+    padding: 8px 15px; 
+
+    font-size: 0.9rem;
+
 }
+
+
 
 .main-nav .button.outline:hover {
-    background-color: var(--color-acento-fuerte);
-    border-color: var(--color-acento-fuerte);
-    color: var(--color-texto-claro);
+
+    background-color: var(--color-acento-fuerte);
+
+    border-color: var(--color-acento-fuerte);
+
+    color: var(--color-texto-claro);
+
 }
+
+
+
 /* ====================================================== */
-/* HERO SECTION *
+
+/* HERO SECTION */
+
 /* ====================================================== */
+
 .hero-section {
-    /* REMPLAZA tus propiedades existentes de .hero-section por estas */
-    position: relative; /* Mantener por si acaso para otros elementos */
-    display: grid; /* Usar CSS Grid para un control preciso de columnas */
-    grid-template-columns: 1fr 1fr; /* Dos columnas: una para contenido, otra para imagen */
-    align-items: center;
-    min-height: 90vh; 
-    background-color: var(--color-fondo-blanco); 
-    overflow: hidden; 
+
+    /* REMPLAZA tus propiedades existentes de .hero-section por estas */
+
+    position: relative; /* Mantener por si acaso para otros elementos */
+
+    display: grid; /* Usar CSS Grid para un control preciso de columnas */
+
+    grid-template-columns: 1fr 1fr; /* Dos columnas: una para contenido, otra para imagen */
+
+    align-items: center;
+
+    min-height: 90vh; 
+
+    background-color: var(--color-fondo-blanco); 
+
+    overflow: hidden; 
+
 }
+
+
 
 .hero-content {
-    /* REMPLAZA tus propiedades existentes de .hero-content por estas */
-    grid-column: 1 / 2; /* Asegura que el contenido esté en la primera columna */
-    padding: var(--spacing-lg); /* Añade padding para separación del borde */
-    padding-left: var(--spacing-md); /* Puedes ajustar este padding si es necesario */
-    padding-right: var(--spacing-md); /* Puedes ajustar este padding si es necesario */
-    z-index: 10;
-    max-width: 600px; /* Limita el ancho del texto para mejor legibilidad */
-    justify-self: end; /* Alinea el contenido a la derecha de su columna */
+
+    /* REMPLAZA tus propiedades existentes de .hero-content por estas */
+
+    grid-column: 1 / 2; /* Asegura que el contenido esté en la primera columna */
+
+    padding: var(--spacing-lg); /* Añade padding para separación del borde */
+
+    padding-left: var(--spacing-md); /* Puedes ajustar este padding si es necesario */
+
+    padding-right: var(--spacing-md); /* Puedes ajustar este padding si es necesario */
+
+    z-index: 10;
+
+    max-width: 600px; /* Limita el ancho del texto para mejor legibilidad */
+
+    justify-self: end; /* Alinea el contenido a la derecha de su columna */
+
 }
+
+
 
 /* --- REGLAS DE LA IMAGEN HERO ACTUALIZADAS --- */
+
 .hero-image-container {
-    /* REMPLAZA tus propiedades existentes de .hero-image-container por estas */
-    grid-column: 2 / 3; /* Asegura que el contenedor de la imagen esté en la segunda columna */
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* Asegura que la imagen no se desborde */
+
+    /* REMPLAZA tus propiedades existentes de .hero-image-container por estas */
+
+    grid-column: 2 / 3; /* Asegura que el contenedor de la imagen esté en la segunda columna */
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+
 }
 
+
+
 .hero-image-container img {
-    /* Estas reglas se mantienen igual, aseguran que la imagen llene su contenedor */
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    object-position: center; 
+
+    /* Estas reglas se mantienen igual, aseguran que la imagen llene su contenedor */
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover; 
+
+    object-position: center; 
+
 }
+
 /* --- FIN REGLAS HERO --- */
 
 
+
+
+
 /* ====================================================== */
+
 /* FEATURES SECTION */
+
 /* ====================================================== */
+
 .features-section {
-    padding: var(--spacing-xl) 0;
-    background-color: var(--color-fondo-contraste); /* Fondo muy sutil */
-    text-align: center;
+
+    padding: var(--spacing-xl) 0;
+
+    background-color: var(--color-fondo-contraste); /* Fondo muy sutil */
+
+    text-align: center;
+
 }
+
+
 
 .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-md);
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: var(--spacing-lg);
+
+    margin-top: var(--spacing-md);
+
 }
+
+
 
 .feature-item {
-    padding: var(--spacing-md);
-    background-color: var(--color-fondo-blanco); /* Items internos BLANCOS */
-    border: 1px solid var(--color-acento-secundario);
-    border-radius: 0;
-    text-align: center;
+
+    padding: var(--spacing-md);
+
+    background-color: var(--color-fondo-blanco); /* Items internos BLANCOS */
+
+    border: 1px solid var(--color-acento-secundario);
+
+    border-radius: 0;
+
+    text-align: center;
+
 }
+
+
 
 .feature-item h3 {
-    font-size: 1.6rem;
-    margin-top: var(--spacing-sm);
-    margin-bottom: var(--spacing-xs);
-    font-weight: 400;
-    color: var(--color-fondo-oscuro);
+
+    font-size: 1.6rem;
+
+    margin-top: var(--spacing-sm);
+
+    margin-bottom: var(--spacing-xs);
+
+    font-weight: 400;
+
+    color: var(--color-fondo-oscuro);
+
 }
+
+
 
 .feature-item p {
-    color: var(--color-texto-oscuro);
-    font-weight: 300;
-    font-size: 1rem;
+
+    color: var(--color-texto-oscuro);
+
+    font-weight: 300;
+
+    font-size: 1rem;
+
 }
+
+
 
 /* --- REGLAS DE LOS ICONOS ACTUALIZADAS --- */
+
 .icon-container {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto var(--spacing-sm);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    /* Fondo de color (opcional, igual que antes) */
-    background-color: var(--color-acento-fuerte); 
-    border-radius: 0; 
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto var(--spacing-sm);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    
+
+    /* Fondo de color (opcional, igual que antes) */
+
+    background-color: var(--color-acento-fuerte); 
+
+    border-radius: 0; 
+
 }
+
+
 
 .icon-container img {
-    max-width: 60%; /* Icono un poco más pequeño que el fondo */
-    height: auto;
-    display: block;
-    
-    /* Si usas iconos SVG blancos, descomenta la siguiente línea */
-    /* filter: invert(1); */
+
+    max-width: 60%; /* Icono un poco más pequeño que el fondo */
+
+    height: auto;
+
+    display: block;
+
+    
+
+    /* Si usas iconos SVG blancos, descomenta la siguiente línea */
+
+    /* filter: invert(1); */
+
 }
+
 /* --- FIN REGLAS ICONOS --- */
 
+
+
 /* ====================================================== */
+
 /* CALL TO ACTION */
+
 /* ====================================================== */
+
 .call-to-action {
-    background-color: var(--color-fondo-oscuro);
-    color: var(--color-texto-claro);
-    padding: var(--spacing-xl) 0;
-    text-align: center;
+
+    background-color: var(--color-fondo-oscuro);
+
+    color: var(--color-texto-claro);
+
+    padding: var(--spacing-xl) 0;
+
+    text-align: center;
+
 }
+
+
 
 .call-to-action h2 {
-    color: var(--color-texto-claro);
-    margin-bottom: var(--spacing-md);
-    font-weight: 400;
+
+    color: var(--color-texto-claro);
+
+    margin-bottom: var(--spacing-md);
+
+    font-weight: 400;
+
 }
+
+
 
 .call-to-action .button.primary {
-    background-color: var(--color-fondo-claro); /* Fondo claro para contraste */
-    color: var(--color-fondo-oscuro);
-    border-color: var(--color-fondo-claro);
+
+    background-color: var(--color-fondo-claro); /* Fondo claro para contraste */
+
+    color: var(--color-fondo-oscuro);
+
+    border-color: var(--color-fondo-claro);
+
 }
+
+
 
 .call-to-action .button.primary:hover {
-    background-color: var(--color-fondo-contraste);
-    border-color: var(--color-fondo-contraste);
+
+    background-color: var(--color-fondo-contraste);
+
+    border-color: var(--color-fondo-contraste);
+
 }
 
+
+
 /* ====================================================== */
+
 /* FOOTER */
+
 /* ====================================================== */
+
 .main-footer {
-    background-color: var(--color-fondo-oscuro);
-    padding: var(--spacing-md) 0;
-    border-top: 1px solid var(--color-acento-fuerte);
-    font-size: 0.9rem;
-    color: var(--color-texto-claro);
+
+    background-color: var(--color-fondo-oscuro);
+
+    padding: var(--spacing-md) 0;
+
+    border-top: 1px solid var(--color-acento-fuerte);
+
+    font-size: 0.9rem;
+
+    color: var(--color-texto-claro);
+
 }
+
+
 
 .main-footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; 
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap; 
+
 }
+
+
 
 .main-footer p {
-    color: var(--color-texto-claro);
+
+    color: var(--color-texto-claro);
+
 }
+
+
 
 .footer-nav ul {
-    list-style: none;
-    display: flex;
-    gap: var(--spacing-sm);
+
+    list-style: none;
+
+    display: flex;
+
+    gap: var(--spacing-sm);
+
 }
+
+
 
 .footer-nav a {
-    color: var(--color-texto-claro);
-    font-weight: 300;
+
+    color: var(--color-texto-claro);
+
+    font-weight: 300;
+
 }
+
+
 
 .footer-nav a:hover {
-    color: var(--color-acento-secundario);
+
+    color: var(--color-acento-secundario);
+
 }
 
+
+
 /* ====================================================== */
+
 /* RESPONSIVE (BÁSICO) */
+
 /* ====================================================== */
+
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.8rem;
-    }
 
-    h2 {
-        font-size: 2.2rem;
-    }
+    h1 {
 
-    .hero-section {
-        flex-direction: column;
-        min-height: auto;
-        padding-top: var(--spacing-lg);
-        padding-bottom: var(--spacing-lg);
-    }
+        font-size: 2.8rem;
 
-    .hero-content {
-        max-width: 100%;
-        text-align: center;
-        padding-right: 0;
-        margin-bottom: var(--spacing-md);
-    }
-    
-    /* Regla de responsive para la imagen hero */
-    .hero-image-container {
-        position: relative;
-        width: 100%;
-        height: 300px; 
-    }
+    }
 
-    .main-header .container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .main-nav ul {
-        flex-direction: column;
-        gap: var(--spacing-xs);
-        margin-top: var(--spacing-sm);
-        padding: var(--spacing-sm) 0;
-    }
-    
-    .main-nav a {
-        padding: 5px 0;
-    }
 
-    .main-footer .container {
-        flex-direction: column;
-        text-align: center;
-        gap: var(--spacing-sm);
-    }
+
+    h2 {
+
+        font-size: 2.2rem;
+
+    }
+
+
+
+    .hero-section {
+
+        flex-direction: column;
+
+        min-height: auto;
+
+        padding-top: var(--spacing-lg);
+
+        padding-bottom: var(--spacing-lg);
+
+    }
+
+
+
+    .hero-content {
+
+        max-width: 100%;
+
+        text-align: center;
+
+        padding-right: 0;
+
+        margin-bottom: var(--spacing-md);
+
+    }
+
+    
+
+    /* Regla de responsive para la imagen hero */
+
+    .hero-image-container {
+
+        position: relative;
+
+        width: 100%;
+
+        height: 300px; 
+
+    }
+
+
+
+    .main-header .container {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    
+
+    .main-nav ul {
+
+        flex-direction: column;
+
+        gap: var(--spacing-xs);
+
+        margin-top: var(--spacing-sm);
+
+        padding: var(--spacing-sm) 0;
+
+    }
+
+    
+
+    .main-nav a {
+
+        padding: 5px 0;
+
+    }
+
+
+
+    .main-footer .container {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: var(--spacing-sm);
+
+    }
+
 }
