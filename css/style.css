@@ -1,0 +1,458 @@
+/* ====================================
+   1. VARIABLES GLOBALES Y RESET
+   ==================================== */
+:root {
+  /* Paleta de Colores Kkot Telecom (Definida por el usuario) */
+  --color-fondo-oscuro: #2d0609;
+  --color-acento-fuerte: #a6002e;
+  --color-acento-secundario: #d3304f;
+  --color-fondo-acentuado: #f3a2cb;
+  --color-fondo-claro: #f8d5e9;
+  --color-fondo-contraste: #ffe5f8;
+
+  /* Variables de Texto Auxiliares */
+  --color-texto-claro: #ffffff;
+  --color-texto-oscuro: #1a1a1a;
+  --color-fondo-blanco: #ffffff;
+
+  /* TIPOGRAFÍA */
+  --font-principal: "Trocchi", serif;
+  --font-secundaria: "Helvetica Neue", Arial, sans-serif;
+  --padding-base: 20px;
+  --border-radius-base: 4px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base minimalista */
+body {
+  font-family: var(--font-secundaria);
+  line-height: 1.6;
+  color: var(--color-texto-oscuro);
+  background-color: var(--color-fondo-blanco); /* Fondo limpio y blanco */
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-principal);
+  font-weight: 400; /* Minimalismo: Trocchi es elegante con peso normal */
+}
+
+/* Contenedores principales y centrado de contenido */
+.blog-container,
+.product-showcase,
+.cta-purchase,
+.product-detail-container,
+.contact-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 var(--padding-base);
+}
+
+/* ====================================
+   2. BOTONES (Minimalistas y con Acento)
+   ==================================== */
+.btn-primary,
+.btn-secondary,
+.btn-cta {
+  display: inline-block;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: var(--border-radius-base);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+/* Botón Principal (Comprar ahora) */
+.btn-primary {
+  background-color: var(--color-acento-fuerte);
+  color: var(--color-texto-claro);
+}
+.btn-primary:hover {
+  background-color: var(--color-acento-secundario);
+}
+
+/* Botón Secundario (Añadir al carrito) */
+.btn-secondary {
+  background-color: var(--color-fondo-claro);
+  color: var(--color-texto-oscuro);
+  border-color: var(--color-acento-fuerte);
+}
+.btn-secondary:hover {
+  background-color: var(--color-acento-fuerte);
+  color: var(--color-texto-claro);
+}
+
+/* Botón CTA en el menú */
+.btn-cta {
+  background-color: var(--color-acento-fuerte) !important;
+  color: var(--color-texto-claro) !important;
+  padding: 8px 15px !important;
+  border-radius: 20px !important;
+  font-size: 0.9em;
+}
+.btn-cta:hover {
+  background-color: var(--color-acento-secundario) !important;
+}
+
+/* ====================================
+   3. CABECERA (HEADER) Y NAVEGACIÓN
+   ==================================== */
+.main-header {
+  background-color: var(--color-fondo-oscuro);
+  padding: 10px var(--padding-base);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--color-acento-fuerte); /* Pequeño toque de color */
+}
+
+.logo img {
+  height: 40px;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.main-nav li a {
+  text-decoration: none;
+  color: var(--color-texto-claro);
+  padding: 5px 10px;
+  transition: color 0.3s, border-bottom 0.3s;
+  font-weight: 500;
+}
+
+.main-nav li a:hover,
+.main-nav li.active a {
+  color: var(--color-acento-fuerte);
+  border-bottom: 2px solid var(--color-acento-fuerte);
+}
+
+/* ====================================
+   4. SECCIÓN HERO (INDEX.HTML)
+   ==================================== */
+.hero {
+  display: flex;
+  flex-wrap: wrap; /* Para hacerlo responsivo */
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 5%;
+  background-color: var(--color-fondo-claro); /* Fondo acentuado sutil */
+  text-align: left;
+}
+
+.hero-content {
+  max-width: 45%;
+  padding-right: 30px;
+}
+
+.hero-content h1 {
+  font-size: 3.5em;
+  color: var(--color-acento-fuerte);
+  margin-bottom: 15px;
+}
+
+.hero-content h2 {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  color: var(--color-fondo-oscuro);
+}
+
+.hero-image {
+  max-width: 45%;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-base);
+  box-shadow: 5px 5px 0px var(--color-acento-fuerte),
+    -5px -5px 0px var(--color-acento-secundario); /* Borde sutil */
+}
+
+/* ====================================
+   5. CARACTERÍSTICAS (INDEX.HTML)
+   ==================================== */
+.product-showcase h2 {
+  text-align: center;
+  color: var(--color-acento-fuerte);
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+.product-showcase > p {
+  /* La p justo debajo del h2 */
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: var(--color-fondo-contraste); /* Fondo claro de contraste */
+  border-radius: var(--border-radius-base);
+  border-top: 5px solid var(--color-acento-secundario);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature-item h3 {
+  color: var(--color-fondo-oscuro);
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+/* ====================================
+   6. SECCIÓN DE COMPRA (INDEX.HTML)
+   ==================================== */
+.cta-purchase {
+  text-align: center;
+  background-color: var(--color-acento-fuerte);
+  color: var(--color-texto-claro);
+  padding: 60px 20px;
+  border-radius: var(--border-radius-base);
+  margin-top: 50px;
+}
+
+.cta-purchase h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: var(--color-texto-claro);
+}
+
+.price-info {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  font-family: var(--font-principal);
+}
+
+/* ====================================
+   7. DETALLES DEL PRODUCTO (producto.html)
+   ==================================== */
+.product-detail-container {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+.product-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.product-header h1 {
+  font-size: 3em;
+  color: var(--color-acento-fuerte);
+}
+.product-price {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-top: 20px;
+}
+.price-tag {
+  font-family: var(--font-principal);
+  color: var(--color-acento-secundario);
+  font-size: 1.2em;
+  margin-right: 20px;
+}
+
+/* Galería */
+.product-gallery {
+  margin-bottom: 50px;
+  border-bottom: 1px solid var(--color-fondo-claro);
+  padding-bottom: 30px;
+}
+.product-gallery h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--color-fondo-oscuro);
+}
+.main-image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.main-image img {
+  max-width: 70%;
+  height: auto;
+  border: 1px solid var(--color-fondo-claro);
+  border-radius: var(--border-radius-base);
+}
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.thumbnails img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-base);
+  opacity: 0.7;
+}
+.thumbnails img:hover,
+.thumbnails img.active {
+  border-color: var(--color-acento-fuerte);
+  opacity: 1;
+}
+
+/* Especificaciones */
+.technical-specs h2,
+.more-details h2 {
+  color: var(--color-fondo-oscuro);
+  border-bottom: 2px solid var(--color-acento-fuerte);
+  padding-bottom: 5px;
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.spec-item {
+  background-color: var(--color-fondo-contraste);
+  padding: 20px;
+  border-left: 5px solid var(--color-acento-secundario);
+  border-radius: var(--border-radius-base);
+}
+.spec-item h3 {
+  color: var(--color-fondo-oscuro);
+  margin-bottom: 15px;
+  font-family: var(--font-secundaria);
+  font-weight: bold;
+}
+.spec-item ul {
+  list-style: none;
+  padding-left: 0;
+}
+.spec-item li {
+  margin-bottom: 8px;
+  font-size: 0.95em;
+}
+
+/* ====================================
+   8. BLOG Y COMENTARIOS (blog.html)
+   ==================================== */
+.blog-container h1 {
+  text-align: center;
+  color: var(--color-acento-fuerte);
+}
+.subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.admin-posts,
+.user-comments,
+.comments-display {
+  padding: 30px 0;
+  border-bottom: 1px solid var(--color-fondo-claro);
+}
+
+.admin-posts h2,
+.user-comments h2,
+.comments-display h2 {
+  color: var(--color-fondo-oscuro);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--color-acento-fuerte);
+  padding-bottom: 5px;
+}
+
+.post {
+  background-color: var(--color-fondo-blanco);
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: var(--border-radius-base);
+  border: 1px solid var(--color-fondo-claro);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.post h3 {
+  color: var(--color-acento-fuerte);
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+
+.post-meta {
+  font-size: 0.9em;
+  color: var(--color-acento-secundario);
+  margin-bottom: 15px;
+}
+
+/* Estilos del formulario de comentarios */
+.comment-form {
+  background-color: var(--color-fondo-contraste);
+  padding: 30px;
+  border-radius: var(--border-radius-base);
+}
+.comment-form input[type="text"],
+.comment-form textarea,
+.comment-form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-acento-fuerte);
+  border-radius: var(--border-radius-base);
+  font-family: inherit;
+  margin-top: 5px;
+}
+
+.client-comment {
+  border-left: 5px solid var(--color-acento-secundario);
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: var(--color-fondo-claro);
+  border-radius: var(--border-radius-base);
+}
+
+.admin-reply {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: var(--color-fondo-blanco);
+  border-left: 3px solid var(--color-acento-fuerte);
+  border-radius: var(--border-radius-base);
+}
+.admin-reply p {
+  font-size: 0.9em;
+}
+
+/* ====================================
+   9. PIE DE PÁGINA (FOOTER)
+   ==================================== */
+.main-footer {
+  background-color: var(--color-fondo-oscuro);
+  color: var(--color-texto-claro);
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+}
+
+.footer-links a {
+  color: var(--color-texto-claro);
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--color-acento-fuerte);
+}
